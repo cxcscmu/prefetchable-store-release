@@ -1,0 +1,16 @@
+{
+ "tk-dense220-1e9": {
+  "lambada_openai": {
+   "acc,none": 0.20978071026586453
+  },
+  "piqa": {
+   "acc,none": 0.5995647442872688
+  },
+  "hellaswag": {
+   "acc,none": 0.28072097191794465
+  },
+  "arc_easy": {
+   "acc,none": 0.46380471380471383
+  }
+ }
+}

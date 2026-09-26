@@ -1,0 +1,32 @@
+{
+ "tk-b27-e64-4e9-sn": {
+  "lambada_openai": {
+   "sample_len": 5153,
+   "perplexity,none": 124.77397760902217,
+   "perplexity_stderr,none": 5.6192618077346985,
+   "acc,none": 0.23267999223753152,
+   "acc_stderr,none": 0.005886807769598473
+  },
+  "piqa": {
+   "sample_len": 1838,
+   "acc,none": 0.6137105549510338,
+   "acc_stderr,none": 0.011360138833823677,
+   "acc_norm,none": 0.6164309031556039,
+   "acc_norm_stderr,none": 0.011345128734116278
+  },
+  "hellaswag": {
+   "sample_len": 10042,
+   "acc,none": 0.28799044015136427,
+   "acc_stderr,none": 0.004519011688417141,
+   "acc_norm,none": 0.309699263095001,
+   "acc_norm_stderr,none": 0.0046142462820553745
+  },
+  "arc_easy": {
+   "sample_len": 2376,
+   "acc,none": 0.492003367003367,
+   "acc_stderr,none": 0.010258471289841984,
+   "acc_norm,none": 0.44234006734006737,
+   "acc_norm_stderr,none": 0.010191334444220854
+  }
+ }
+}

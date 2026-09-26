@@ -1,0 +1,32 @@
+{
+ "tk-dense1B-2e9": {
+  "lambada_openai": {
+   "sample_len": 5153,
+   "perplexity,none": 65.05742281562226,
+   "perplexity_stderr,none": 2.6376727622036444,
+   "acc,none": 0.27149233456239086,
+   "acc_stderr,none": 0.0061959502470208495
+  },
+  "piqa": {
+   "sample_len": 1838,
+   "acc,none": 0.6327529923830251,
+   "acc_stderr,none": 0.01124712853969056,
+   "acc_norm,none": 0.6327529923830251,
+   "acc_norm_stderr,none": 0.011247128539690558
+  },
+  "hellaswag": {
+   "sample_len": 10042,
+   "acc,none": 0.30770762796255724,
+   "acc_stderr,none": 0.00460601577312563,
+   "acc_norm,none": 0.342760406293567,
+   "acc_norm_stderr,none": 0.004736621698861184
+  },
+  "arc_easy": {
+   "sample_len": 2376,
+   "acc,none": 0.5223063973063973,
+   "acc_stderr,none": 0.010249568404555653,
+   "acc_norm,none": 0.4654882154882155,
+   "acc_norm_stderr,none": 0.010235314238969393
+  }
+ }
+}

@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+data/
+out/
+*.pt
+.DS_Store
+.ruff_cache/
+analysis/out/

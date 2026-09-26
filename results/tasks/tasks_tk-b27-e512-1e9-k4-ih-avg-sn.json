@@ -1,0 +1,28 @@
+{
+ "tk-b27-e512-1e9-k4-ih-avg-sn": {
+  "lambada_openai": {
+   "perplexity,none": 267.34320502071995,
+   "perplexity_stderr,none": 12.202407905725455,
+   "acc,none": 0.18125363865709296,
+   "acc_stderr,none": 0.0053669819064980275
+  },
+  "piqa": {
+   "acc,none": 0.6050054406964092,
+   "acc_stderr,none": 0.011405665187969115,
+   "acc_norm,none": 0.5941240478781284,
+   "acc_norm_stderr,none": 0.011457256809261901
+  },
+  "hellaswag": {
+   "acc,none": 0.2832105158334993,
+   "acc_stderr,none": 0.004496369742132491,
+   "acc_norm,none": 0.2960565624377614,
+   "acc_norm_stderr,none": 0.004555832462774653
+  },
+  "arc_easy": {
+   "acc,none": 0.4701178451178451,
+   "acc_stderr,none": 0.010241444322886225,
+   "acc_norm,none": 0.4196127946127946,
+   "acc_norm_stderr,none": 0.010126315840891423
+  }
+ }
+}

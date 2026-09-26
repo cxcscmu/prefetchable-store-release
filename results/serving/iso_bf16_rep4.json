@@ -1,0 +1,41 @@
+{
+ "gpu": "NVIDIA L40S",
+ "note": "iso-quality: dense1B 2.7754 vs sc-b220-e512 2.7945 (both 1e9 tokens)",
+ "dense1B_fp32": {
+  "tok_s": 84.8655779472854,
+  "step_ms": 11.783340480178595,
+  "watts": 172.64972972972973,
+  "peak_vram_bytes": 4210132480,
+  "resident_params": 1038035712,
+  "store_bytes": 0,
+  "loss": 2.7754
+ },
+ "dense1B_bf16": {
+  "tok_s": 86.69008432274485,
+  "step_ms": 11.535344645380974,
+  "watts": 151.97055555555556,
+  "peak_vram_bytes": 2109982720,
+  "resident_params": 1038035712,
+  "store_bytes": 0,
+  "loss": 2.7754
+ },
+ "store_write_s": 4.611077547073364,
+ "b220_hash512_disk_int8": {
+  "tok_s": 113.44804015103311,
+  "step_ms": 8.814607979729772,
+  "fetch_ms": 2.950214082375169,
+  "watts": 112.63875,
+  "peak_vram_bytes": 613514752,
+  "o_direct": true,
+  "resident_params": 256318848,
+  "store_bytes": 3028287488,
+  "loss": 2.7596129924058914,
+  "store_ckpt": "ckpt_tk-b220-e512-1e9-sn.pt",
+  "moe_layers": [
+   3,
+   9
+  ],
+  "compute_dtype": "bf16",
+  "disk_dtype": "int8"
+ }
+}

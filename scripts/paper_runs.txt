@@ -1,0 +1,96 @@
+# Every training run whose result is in results/training, as a train.py command line.
+# Run from the repository root:  python src/train.py <flags> --root data/v3 --out out
+# Most runs were trained data-parallel on 8 GPUs, which consumes the same sequences in the same order:
+#   torchrun --standalone --nproc_per_node=8 src/train.py <flags> --micro-batch 8 --accum 1 --root data/v3 --out out
+# Add --resume-every 500 on preemptible queues. The run name printed by train.py matches the first column.
+tk-b100-e512-1e9-s1-sn                 --arm 7 --mult 1 --store-norm --init-seed 1
+tk-b100-e512-1e9-sn                    --arm 7 --mult 1 --store-norm
+tk-b100-e512-2e9-sn                    --arm 7 --mult 2 --store-norm
+tk-b100-e512-4e9-sn                    --arm 7 --mult 4 --store-norm
+tk-b100-e512-8e9-sn                    --arm 7 --mult 8 --store-norm
+tk-b220-e512-1e9-sn                    --arm 8 --mult 1 --store-norm
+tk-b220-e512-2e9-sn                    --arm 8 --mult 2 --store-norm
+tk-b220-e512-4e9-sn                    --arm 8 --mult 4 --store-norm
+tk-b220-e512-8e9-sn                    --arm 8 --mult 8 --store-norm
+tk-b27-e128-1e9-s1-sn                  --arm 9 --mult 1 --store-norm --init-seed 1
+tk-b27-e128-1e9-sn                     --arm 9 --mult 1 --store-norm
+tk-b27-e128-2e9-sn                     --arm 9 --mult 2 --store-norm
+tk-b27-e128-4e9-sn                     --arm 9 --mult 4 --store-norm
+tk-b27-e128-8e9-s1-sn                  --arm 9 --mult 8 --store-norm --init-seed 1
+tk-b27-e128-8e9-sn                     --arm 9 --mult 8 --store-norm
+tk-b27-e256-1e9-s1-sn                  --arm 10 --mult 1 --store-norm --init-seed 1
+tk-b27-e256-1e9-sn                     --arm 10 --mult 1 --store-norm
+tk-b27-e256-2e9-sn                     --arm 10 --mult 2 --store-norm
+tk-b27-e256-4e9-sn                     --arm 10 --mult 4 --store-norm
+tk-b27-e256-8e9-s1-sn                  --arm 10 --mult 8 --store-norm --init-seed 1
+tk-b27-e256-8e9-sn                     --arm 10 --mult 8 --store-norm
+tk-b27-e512-1e9-g4-ih-sn               --arm 6 --mult 1 --store-norm --gran 4 --indep-hash
+tk-b27-e512-1e9-g4-lrn-sh1-cf0-sn      --arm 6 --mult 1 --store-norm --gran 4 --router learned --shared 1 --cap-factor 0
+tk-b27-e512-1e9-g4-prev-sh1-cf0-sn     --arm 6 --mult 1 --store-norm --gran 4 --router prev --shared 1 --cap-factor 0
+tk-b27-e512-1e9-k4-ih-avg-sg-sn        --arm 6 --mult 1 --store-norm --gran 4 --full-width --indep-hash --slot-avg --slot-gate
+tk-b27-e512-1e9-k4-ih-avg-sn           --arm 6 --mult 1 --store-norm --gran 4 --full-width --indep-hash --slot-avg
+tk-b27-e512-1e9-k4-ih-sn               --arm 6 --mult 1 --store-norm --gran 4 --full-width --indep-hash
+tk-b27-e512-1e9-lrn-cf0-sn             --arm 6 --mult 1 --store-norm --router learned --cap-factor 0
+tk-b27-e512-1e9-s1-g4-lrn-sh1-cf0-sn   --arm 6 --mult 1 --store-norm --init-seed 1 --gran 4 --router learned --shared 1 --cap-factor 0
+tk-b27-e512-1e9-s1-g4-prev-sh1-cf0-sn  --arm 6 --mult 1 --store-norm --init-seed 1 --gran 4 --router prev --shared 1 --cap-factor 0
+tk-b27-e512-1e9-s1-k4-ih-avg-sn        --arm 6 --mult 1 --store-norm --init-seed 1 --gran 4 --full-width --indep-hash --slot-avg
+tk-b27-e512-1e9-s1-sn                  --arm 6 --mult 1 --store-norm --init-seed 1
+tk-b27-e512-1e9-sn                     --arm 6 --mult 1 --store-norm
+tk-b27-e512-2e9-g4-lrn-sh1-cf0-sn      --arm 6 --mult 2 --store-norm --gran 4 --router learned --shared 1 --cap-factor 0
+tk-b27-e512-2e9-g4-prev-sh1-cf0-sn     --arm 6 --mult 2 --store-norm --gran 4 --router prev --shared 1 --cap-factor 0
+tk-b27-e512-2e9-s1-g4-lrn-sh1-cf0-sn   --arm 6 --mult 2 --store-norm --init-seed 1 --gran 4 --router learned --shared 1 --cap-factor 0
+tk-b27-e512-2e9-s1-g4-prev-sh1-cf0-sn  --arm 6 --mult 2 --store-norm --init-seed 1 --gran 4 --router prev --shared 1 --cap-factor 0
+tk-b27-e512-2e9-s1-sn                  --arm 6 --mult 2 --store-norm --init-seed 1
+tk-b27-e512-2e9-sn                     --arm 6 --mult 2 --store-norm
+tk-b27-e512-4e9-g4-lrn-sh1-cf0-sn      --arm 6 --mult 4 --store-norm --gran 4 --router learned --shared 1 --cap-factor 0
+tk-b27-e512-4e9-g4-prev-sh1-cf0-sn     --arm 6 --mult 4 --store-norm --gran 4 --router prev --shared 1 --cap-factor 0
+tk-b27-e512-4e9-s1-g4-prev-sh1-cf0-sn  --arm 6 --mult 4 --store-norm --init-seed 1 --gran 4 --router prev --shared 1 --cap-factor 0
+tk-b27-e512-4e9-s1-sn                  --arm 6 --mult 4 --store-norm --init-seed 1
+tk-b27-e512-4e9-sn                     --arm 6 --mult 4 --store-norm
+tk-b27-e512-8e9-g4-ih-sn               --arm 6 --mult 8 --store-norm --gran 4 --indep-hash
+tk-b27-e512-8e9-g4-lrn-sh1-cf0-sn      --arm 6 --mult 8 --store-norm --gran 4 --router learned --shared 1 --cap-factor 0
+tk-b27-e512-8e9-g4-prev-sh1-cf0-sn     --arm 6 --mult 8 --store-norm --gran 4 --router prev --shared 1 --cap-factor 0
+tk-b27-e512-8e9-k4-ih-avg-sg-sn        --arm 6 --mult 8 --store-norm --gran 4 --full-width --indep-hash --slot-avg --slot-gate
+tk-b27-e512-8e9-k4-ih-avg-sn           --arm 6 --mult 8 --store-norm --gran 4 --full-width --indep-hash --slot-avg
+tk-b27-e512-8e9-lrn-cf0-sn             --arm 6 --mult 8 --store-norm --router learned --cap-factor 0
+tk-b27-e512-8e9-s1-g4-lrn-sh1-cf0-sn   --arm 6 --mult 8 --store-norm --init-seed 1 --gran 4 --router learned --shared 1 --cap-factor 0
+tk-b27-e512-8e9-s1-g4-prev-sh1-cf0-sn  --arm 6 --mult 8 --store-norm --init-seed 1 --gran 4 --router prev --shared 1 --cap-factor 0
+tk-b27-e512-8e9-sn                     --arm 6 --mult 8 --store-norm
+tk-b27-e64-1e9-s1-sn                   --arm 5 --mult 1 --store-norm --init-seed 1
+tk-b27-e64-1e9-sn                      --arm 5 --mult 1 --store-norm
+tk-b27-e64-2e9-sn                      --arm 5 --mult 2 --store-norm
+tk-b27-e64-4e9-sn                      --arm 5 --mult 4 --store-norm
+tk-b27-e64-8e9-s1-sn                   --arm 5 --mult 8 --store-norm --init-seed 1
+tk-b27-e64-8e9-sn                      --arm 5 --mult 8 --store-norm
+tk-dense100-1e9-s1                     --arm 2 --mult 1 --init-seed 1
+tk-dense100-2e9-s1                     --arm 2 --mult 2 --init-seed 1
+tk-dense100-2e9                        --arm 2 --mult 2
+tk-dense100-4e9-s1                     --arm 2 --mult 4 --init-seed 1
+tk-dense100-4e9                        --arm 2 --mult 4
+tk-dense100-8e9-s1                     --arm 2 --mult 8 --init-seed 1
+tk-dense100-8e9                        --arm 2 --mult 8
+tk-dense1B-1e9-s1                      --arm 12 --mult 1 --init-seed 1
+tk-dense1B-1e9                         --arm 12 --mult 1
+tk-dense1B-2e9                         --arm 12 --mult 2
+tk-dense1B-4e9                         --arm 12 --mult 4
+tk-dense1B-8e9                         --arm 12 --mult 8
+tk-dense220-1e9-s1                     --arm 3 --mult 1 --init-seed 1
+tk-dense220-2e9-s1                     --arm 3 --mult 2 --init-seed 1
+tk-dense220-2e9                        --arm 3 --mult 2
+tk-dense220-4e9-s1                     --arm 3 --mult 4 --init-seed 1
+tk-dense220-4e9                        --arm 3 --mult 4
+tk-dense220-8e9-s1                     --arm 3 --mult 8 --init-seed 1
+tk-dense220-8e9                        --arm 3 --mult 8
+tk-dense27-1e9-s1                      --arm 1 --mult 1 --init-seed 1
+tk-dense27-1e9                         --arm 1 --mult 1
+tk-dense27-2e9-s1                      --arm 1 --mult 2 --init-seed 1
+tk-dense27-2e9                         --arm 1 --mult 2
+tk-dense27-4e9-s1                      --arm 1 --mult 4 --init-seed 1
+tk-dense27-4e9                         --arm 1 --mult 4
+tk-dense27-8e9-s1                      --arm 1 --mult 8 --init-seed 1
+tk-dense27-8e9                         --arm 1 --mult 8
+tk-dense405-1e9-s1                     --arm 4 --mult 1 --init-seed 1
+tk-dense405-2e9                        --arm 4 --mult 2
+tk-dense405-4e9                        --arm 4 --mult 4
+tk-dense405-8e9-s1                     --arm 4 --mult 8 --init-seed 1
+tk-dense405-8e9                        --arm 4 --mult 8

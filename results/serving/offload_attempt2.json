@@ -1,0 +1,71 @@
+{
+ "device": "cuda",
+ "n_experts": 512,
+ "configs": {
+  "A_resident": {
+   "tok_s": 117.52569655301758,
+   "step_ms": 8.508777478709817,
+   "watts": 94.58916666666667
+  },
+  "B_disk_bf16": {
+   "tok_s": 151.46841355219198,
+   "step_ms": 6.6020365338772535,
+   "fetch_ms": 2.1085829939693213,
+   "watts": 99.224,
+   "o_direct": true
+  },
+  "C_disk_int8": {
+   "tok_s": 143.07501481812062,
+   "step_ms": 6.989340530708432,
+   "fetch_ms": 2.0697396248579025,
+   "watts": 98.73875,
+   "o_direct": true
+  },
+  "D_disk_int4": {
+   "tok_s": 148.72264784424968,
+   "step_ms": 6.723925471305847,
+   "fetch_ms": 2.2217659279704094,
+   "watts": 100.83375,
+   "o_direct": true
+  },
+  "E_disk_int8_sync": {
+   "tok_s": 126.10565467639883,
+   "step_ms": 7.929858518764377,
+   "fetch_ms": 1.8029233906418085,
+   "watts": 97.36684210526316,
+   "o_direct": true
+  }
+ },
+ "logits_equal_bf16": true,
+ "logit_max_diff_bf16": 0.0,
+ "logit_max_diff_int8": 0.023008346557617188,
+ "prefill_resident_s": 1.9190690517425537,
+ "prefill_cold_stream_s": 1.6776790618896484,
+ "prefill_touched_experts": 892,
+ "gates": {
+  "G4-B": {
+   "gate": "G4-B",
+   "ratio": 1.288811025968796,
+   "fires": true
+  },
+  "G4-C": {
+   "gate": "G4-C",
+   "predicted_slowdown": 1.2478126851060918,
+   "measured_slowdown": 1.2011230895305751,
+   "fires": true
+  },
+  "G4-D": {
+   "gate": "G4-D",
+   "fires": true
+  },
+  "inputs": {
+   "resident_toks": 117.52569655301758,
+   "disk_prefetch_toks": 151.46841355219198,
+   "disk_sync_toks": 126.10565467639883,
+   "fetch_ms": 2.1085829939693213,
+   "step_ms": 8.508777478709817,
+   "logits_equal": true
+  }
+ },
+ "peak_vram_bytes": 5938510848
+}

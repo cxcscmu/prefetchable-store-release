@@ -1,0 +1,7 @@
+torch>=2.5          # training runs used torch 2.8.0 with CUDA 12.8
+numpy>=1.24,<3
+transformers>=4.40  # Llama-2 tokenizer
+datasets>=2.18      # corpus build (streaming)
+lm_eval>=0.4,<0.5   # zero-shot task scores
+matplotlib>=3.7     # figures
+pytest              # tests
